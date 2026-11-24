@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport-from-tanim" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>CE'13 Attendance Portal · Faridpur Engineering College</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f4f6fb;--card:#fff;--tx:#18202f;--mu:#667085;--bd:#e2e6ef;--grid:#e6ebf6;--ac:#2f5bea;--ok:#1a9d5b;--wa:#d98a00;--er:#d6362f}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e121b;--card:#171c28;--tx:#e8ecf5;--mu:#8b95aa;--bd:#262d3d;--grid:#161d2a;--ac:#6f8fff;--ok:#3ccf86;--wa:#f0b429;--er:#ff6b62}}
+:root[data-theme="dark"]{--bg:#0e121b;--card:#171c28;--tx:#e8ecf5;--mu:#8b95aa;--bd:#262d3d;--grid:#161d2a;--ac:#6f8fff;--ok:#3ccf86;--wa:#f0b429;--er:#ff6b62}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:30px 30px;background-attachment:fixed}
+header{background:var(--card);border-bottom:1px solid var(--bd);padding:12px 18px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:42px;height:42px;flex:none;color:var(--ac)}
+.brand b{display:block;font-size:16px;line-height:1.25}
+.brand span{font-size:11.5px;color:var(--mu)}
+nav a{color:var(--mu);text-decoration:none;margin-left:16px;font-weight:600;font-size:14px;padding:6px 0;border-bottom:2px solid transparent}
+nav a.on{color:var(--ac);border-color:var(--ac)}
+main{max-width:860px;margin:0 auto;padding:24px 16px}
+.blueprint{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:26px 18px 22px;overflow:hidden}
+.blueprint::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:26px 26px;opacity:.6;-webkit-mask-image:radial-gradient(130% 100% at 50% 0%,#000 25%,transparent 78%);mask-image:radial-gradient(130% 100% at 50% 0%,#000 25%,transparent 78%)}
+.blueprint>*{position:relative;z-index:1}
+.hero{text-align:center}
+.hero h1{margin:0 0 6px;font-size:clamp(22px,5vw,28px);letter-spacing:-.01em}
+.hero p{color:var(--mu);margin:0;font-size:14px}
+form{display:flex;gap:8px;max-width:440px;margin:20px auto 0}
+input{flex:1;padding:14px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font-size:16px;min-width:0}
+input:focus{outline:2px solid var(--ac)}
+button{padding:14px 22px;border:0;border-radius:12px;background:var(--ac);color:#fff;font-weight:700;font-size:16px;cursor:pointer}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;margin-top:16px}
+.top{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.ring{--p:0;--c:var(--ok);width:110px;height:110px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--bd) 0);display:grid;place-items:center}
+.ring i{width:84px;height:84px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:700 24px system-ui;font-style:normal}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;color:#fff}
+.rollno{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.sumrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.big{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.big small{font-size:14px;color:var(--mu);font-weight:700}
+.thead{display:grid;grid-template-columns:1fr auto auto;gap:10px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--mu);font-weight:700;padding-bottom:4px}
+.thead span:nth-child(2),.thead span:nth-child(3){text-align:right}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:3px 10px;align-items:center;padding:12px 0;border-top:1px solid var(--bd)}
+.subj b{display:block;font-size:15px;line-height:1.25}
+.subj small{color:var(--mu);font-size:12px}
+.att{text-align:right;line-height:1.15}
+.att b{display:block;font-size:14px;font-variant-numeric:tabular-nums}
+.att small{color:var(--mu);font-size:12px}
+.mk{display:flex;align-items:baseline;gap:1px;color:var(--c);border:1px solid var(--bd);border-radius:10px;padding:4px 9px;font-variant-numeric:tabular-nums;background:var(--bg)}
+.mk b{font-size:15px}
+.mk small{font-size:11px;opacity:.85}
+.bar{grid-column:1/4;height:8px;background:var(--bd);border-radius:9px;overflow:hidden}
+.bar u{display:block;height:100%;border-radius:9px}
+.err{text-align:center;color:var(--er);font-weight:600}
+.note{font-size:13px;color:var(--mu)}
+.h-sec{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);font-weight:700;margin:0 0 12px}
+.h-sec::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--bd) 0 6px,transparent 6px 12px)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.facts div{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:12px;text-align:center}
+.facts b{display:block;font-size:20px;color:var(--ac)}
+.facts span{display:block;font-size:11.5px;color:var(--mu);line-height:1.3}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.member{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--bd);border-radius:14px;background:var(--bg)}
+.avatar{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--ac);color:#fff;font-weight:800;font-size:15px;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.member b{display:block;font-size:15px}
+.member span{display:block;font-size:12px;color:var(--mu);margin:1px 0 4px}
+.member a{font-size:13px;color:var(--ac);font-weight:600;text-decoration:none;word-break:break-word}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:28px 16px}
+footer a,.card a{color:var(--ac);font-weight:600}
+.hide{display:none}
+</style></head><body>
+
+<header>
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <rect x="1.6" y="1.6" width="44.8" height="44.8" rx="12" stroke="currentColor" stroke-width="2" opacity=".3"/>
+      <path d="M8 33h32" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M10 33c0-8.5 6-14 14-14s14 5.5 14 14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M24 19.5V33M17 24v9M31 24v9" stroke="currentColor" stroke-width="1.5" opacity=".55" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <b>CE'13 Attendance Portal</b>
+      <span>Faridpur Engineering College · Dept. of Civil Engineering</span>
+    </div>
+  </div>
+  <nav><a href="#home" id="n-home">Home</a><a href="#about" id="n-about">About</a></nav>
+</header>
+
+<main>
+<section id="home">
+  <div class="blueprint">
+    <div class="hero">
+      <h1>Check your attendance</h1>
+      <p>1st Year 1st Semester Examination-2026 (2025–2026)</p>
+    </div>
+    <form id="f"><input id="r" inputmode="numeric" placeholder="Enter your roll no." autocomplete="off" aria-label="Roll number"><button>Search</button></form>
+  </div>
+  <div id="out"></div>
+</section>
+
+<section id="about" class="hide">
+  <div class="card">
+    <div class="h-sec">About this portal</div>
+    <p style="margin-top:0">This portal lets students of the Civil Engineering Department look up the attendance of all courses by roll number. Data comes from the official attendance sheet for the 1st Year 1st Semester Examination-2026.</p>
+    <p><b>Attendance marks.</b> Every course carries <b>10 marks</b> for attendance. The portal estimates them as <i>attended ÷ conducted × 10</i>, rounded to the nearest whole number (maximum 10). The total is shown out of 80 (8 courses × 10).</p>
+    <p class="note">The data was digitised from a scanned copy, so a few figures may be misread. If something looks wrong, please check it against the official sheet in the department office.</p>
+    <div class="facts">
+      <div><b>8</b><span>courses tracked</span></div>
+      <div><b>10</b><span>marks per course</span></div>
+      <div><b>80</b><span>max attendance marks</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h-sec">Built by</div>
+    <div class="team">
+      
+      
+      <article class="member">
+        <div class="avatar" aria-hidden="true"><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/730244969_997635236489905_6840381565462091389_n.jpg?stp=dst-jpg_tt6&cstp=mx896x896&ctp=s896x896&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=R2jfE3Awo3IQ7kNvwEMqULZ&_nc_oc=Adp6Bg3H5wer5uE1rP4qZsVQ52BnMiFF3t5zQN5zfYgDxMK3BVoiEPZljT1B4RiQb1g&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=B9sE_2KBhWuYXRTG2Qo19A&_nc_ss=7b3a8&oh=00_AQSJyU2H2pe10MFdqiDG8nMFeUc3EMo1KuH_OT7173dVtA&oe=6B0B0696" alt="Tanim"></div>
+        <div>
+          <b>Tanim Hossain</b>
+          <span>Lead developer · data digitisation</span>
+          <a href="https://github.com/from-tanim" target="_blank" rel="noopener">github.com/from-tanim</a>
+        </div>
+      </article>
+
+      
+      <article class="member">
+        <div class="avatar" aria-hidden="true"><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/910466262_1889018322542582_3584538696698538863_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1200&ctp=s1200x1200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=s41sdQStwM8Q7kNvwHPbo_x&_nc_oc=AdpX5NBd7mQYAAS_wyrIvzzhHsv2j4ybyXAF9at6gDvPy3VWgdoyLgK-SUzaDkryMzY&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=uaywWkOD0FNuianO-nozBQ&_nc_ss=7b3a8&oh=00_AQT095yo2YcYP7oqQb5fm3c_YxGswY9DJWNJF0zMFr9wyQ&oe=6B0AFBF4" alt="Tanim">NS</div>
+        <div>
+          <b>Md. Awasaf Mushfiq</b>
+          <span>Co-developer · data verification</span>
+          <a href="#" target="_blank" rel="noopener">@mushfiqq</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="y">2026</span> <a href="https://github.com/from-tanim" target="_blank" rel="noopener">from-tanim</a> · Not an official college publication</footer>
+
+<script>
+const C=[["PHY 101","Physics",3,30],["CHEM 101","Chemistry",3,32],["CHEM 102","Chemistry Lab",1.5,12],["MATH 101","Mathematics",3,31],["Hum 101","Humanities",2,19],["Hum 102","Humanities",.75,9],["CE 101","Civil Engineering",1.5,14],["CE 102","Civil Engineering",4,45]];
+// roll, 8 attended counts, average %, remark (0 none, 1 non-collegiate fee, 2 not eligible)
+const D=[[1,22,30,11,28,15,7,11,40,83,0],[2,27,29,12,30,18,9,14,44,96,0],[3,24,30,10,29,17,7,11,33,83,0],[4,26,32,12,29,18,8,14,43,94,0],[5,25,24,11,30,16,7,13,42,86,0],[6,26,25,11,27,17,6,13,42,85,0],[7,28,22,12,33,17,8,13,44,94,0],[8,20,30,8,30,17,7,12,37,82,0],[10,23,31,12,30,19,8,14,41,93,0],[11,21,31,12,33,17,7,13,38,89,0],[12,23,32,10,30,15,8,10,41,85,0],[13,18,28,10,26,15,6,11,31,75,0],[14,23,29,11,32,17,9,13,38,90,0],[15,24,30,10,31,18,9,13,43,92,0],[16,25,30,11,32,18,7,14,37,90,0],[17,27,32,12,30,19,9,14,43,97,0],[18,23,31,10,32,16,8,14,40,90,0],[19,26,31,12,33,19,9,14,39,96,0],[20,27,31,12,32,19,9,14,42,97,0],[21,27,32,11,33,19,9,13,43,96,0],[22,19,30,8,20,10,5,7,38,66,1],[23,19,28,12,25,14,7,14,35,82,0],[28,26,31,9,30,16,9,12,42,89,0],[30,27,30,10,32,17,9,14,44,94,0],[31,14,28,10,25,16,8,14,30,79,0],[32,14,20,8,20,13,6,9,20,60,1],[35,17,24,10,20,14,7,13,20,71,1],[36,18,25,9,25,14,4,13,41,74,1],[37,17,26,10,26,15,5,14,37,77,0],[38,18,23,9,26,10,5,12,38,71,1],[39,25,31,11,30,16,9,10,43,89,0],[43,18,25,9,25,10,5,9,37,63,1],[46,18,26,10,25,10,6,4,25,63,1],[48,25,29,11,30,16,9,8,43,87,0],[49,23,32,12,30,18,8,14,40,93,0],[50,23,29,10,31,13,8,14,38,86,0],[51,29,32,12,33,19,9,14,43,99,0],[55,19,24,9,28,15,6,11,32,74,0],[56,30,32,12,30,19,9,14,45,99,0],[491,12,27,10,23,10,7,8,35,68,1],[497,22,26,10,28,16,7,12,39,82,0],[499,18,24,9,26,9,4,12,33,67,1],[519,24,27,10,33,17,7,13,44,88,0],[523,27,32,12,28,15,8,14,38,91,0],[524,18,32,12,29,13,9,13,43,88,0],[525,5,22,8,10,3,0,2,35,36,2],[526,20,29,11,28,14,8,9,25,77,0],[534,19,29,11,15,13,6,9,30,70,1],[540,29,32,12,31,18,9,14,20,91,0],[542,20,30,11,30,12,8,13,10,76,0]];
+
+const $=id=>document.getElementById(id);
+const col=p=>p>=75?"var(--ok)":p>=60?"var(--wa)":"var(--er)";
+const mk=(a,t)=>Math.max(0,Math.min(10,Math.round(a/t*10)));
+
+function show(){
+  const h=location.hash==="#about"?"about":"home";
+  $("home").classList.toggle("hide",h!=="home");$("about").classList.toggle("hide",h!=="about");
+  $("n-home").classList.toggle("on",h==="home");$("n-about").classList.toggle("on",h==="about");
+}
+addEventListener("hashchange",show);show();
+
+$("f").addEventListener("submit",e=>{
+  e.preventDefault();
+  const v=parseInt($("r").value.trim(),10),o=$("out"),d=D.find(x=>x[0]===v);
+  if(!d){o.innerHTML='<div class="card err">No record found for roll '+(isNaN(v)?"—":v)+'. Please check the number and try again.</div>';return}
+
+  const avg=d[9],rm=d[10];
+  const st=rm===2?["Not Eligible","var(--er)"]:rm===1?["Non-Collegiate Fee","var(--wa)"]:["Eligible","var(--ok)"];
+
+  let rows="",tot=0;
+  C.forEach((c,i)=>{
+    const a=d[i+1],t=c[3],p=Math.round(a/t*100),m=mk(a,t);
+    tot+=m;
+    rows+='<div class="row">'
+        +'<div class="subj"><b>'+c[0]+'</b><small>'+c[1]+' · '+c[2]+' cr</small></div>'
+        +'<div class="att"><b>'+a+'/'+t+'</b><small>'+p+'%</small></div>'
+        +'<div class="mk" style="--c:'+col(p)+'"><b>'+m+'</b><small>/10</small></div>'
+        +'<div class="bar"><u style="width:'+p+'%;background:'+col(p)+'"></u></div>'
+        +'</div>';
+  });
+
+  const max=C.length*10, tp=Math.round(tot/max*100);
+
+  o.innerHTML=
+    '<div class="card"><div class="top">'
+      +'<div class="ring" style="--p:'+avg+';--c:'+col(avg)+'"><i>'+avg+'%</i></div>'
+      +'<div><div class="note">Roll No.</div><div class="rollno">'+d[0]+'</div>'
+      +'<span class="badge" style="background:'+st[1]+'">'+st[0]+'</span></div>'
+    +'</div></div>'
+
+    +'<div class="card">'
+      +'<div class="sumrow"><span class="note">Attendance marks secured (all courses)</span>'
+      +'<b class="big">'+tot+' <small>/ '+max+'</small></b></div>'
+      +'<div class="bar"><u style="width:'+tp+'%;background:'+col(tp)+'"></u></div>'
+    +'</div>'
+
+    +'<div class="card"><div class="thead"><span>Course</span><span>Attended</span><span>Marks</span></div>'+rows+'</div>'
+
+    +'<p class="note" style="text-align:center;margin-top:14px">Attendance marks per course = attended ÷ conducted × 10 (rounded, max 10). '
+    +'Green ≥ 75%, amber 60–74%, red &lt; 60%.</p>';
+});
+</script>
+</body></html>
