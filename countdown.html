@@ -1,231 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be a warrior</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-    --primary: #6a8cff;  /* Brighter primary for dark mode */
-    --secondary: #ff7b7b;
-    --dark: #121212;    /* Dark background */
-    --darker: #1e1e1e;  /* Slightly lighter dark */
-    --light: #e0e0e0;   /* Light text */
-    --lighter: #f5f5f5; /* Brighter text */
-    --success: #4caf50;
-    --card-bg: #2d2d2d; /* Card backgrounds */
-    --border: #444;     /* Borders */
-}
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark);
-    color: var(--light);
-}
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), #00ab41);
-            color: white;
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: #0000;
-            background-size: cover;
-            position: relative;
-            color: white;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .countdown-container {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem auto;
-            max-width: 600px;
-        }
-        
-        .countdown-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .countdown-item {
-            background: white;
-            color: var(--dark);
-            padding: 1rem;
-            border-radius: 8px;
-            min-width: 80px;
-            text-align: center;
-        }
-        
-        .countdown-number {
-            font-size: 2rem;
-            font-color: red;
-            font-weight: 700;
-           background: linear-gradient(to left, red 50%, black 50%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-        
-        .countdown-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--dark);
-        }
-        
-        
-        
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FEC CE 13 · 1st Year 1st Semester Routine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--card:#ffffffcc;--tx:#0f172a;--mu:#5b6478;--bd:#e2e6f0;--ac:#4f46e5;--ac2:#06b6d4;--ac3:#f43f5e;--ok:#10b981;--sh:0 10px 40px -12px #4f46e533;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070a14;--card:#111729cc;--tx:#eef2ff;--mu:#9aa5c0;--bd:#222b45;--sh:0 10px 40px -12px #000a}}
+:root[data-theme="dark"]{--bg:#070a14;--card:#111729cc;--tx:#eef2ff;--mu:#9aa5c0;--bd:#222b45;--sh:0 10px 40px -12px #000a}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Space Grotesk","Hind Siliguri",system-ui,sans-serif;overflow-x:hidden;line-height:1.5}
+body.bn{font-family:"Hind Siliguri","Space Grotesk",system-ui,sans-serif}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;animation:fl 14s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:var(--ac);top:-120px;left:-100px}
+.o2{width:380px;height:380px;background:var(--ac2);top:30%;right:-120px;animation-delay:-5s}
+.o3{width:340px;height:340px;background:var(--ac3);bottom:-100px;left:30%;animation-delay:-9s;opacity:.22}
+@keyframes fl{to{transform:translate(60px,50px) scale(1.15)}}
+.wrap{max-width:1040px;margin:0 auto;padding:18px 18px 60px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0 18px}
+.logo{font-weight:700;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;font-style:normal}
+.ctl{display:flex;gap:8px}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:7px 14px;backdrop-filter:blur(10px);transition:.2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--ac)}
+.hero{text-align:center;padding:26px 0 10px}
+.chip{display:inline-block;padding:6px 14px;border-radius:999px;background:linear-gradient(90deg,#4f46e522,#06b6d422);border:1px solid var(--bd);font-size:.85rem;color:var(--mu)}
+h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:1.05;margin:16px 0 10px;letter-spacing:-.03em}
+h1 span{background:linear-gradient(90deg,var(--ac),var(--ac2),var(--ac3));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200%;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200% 0}}
+.sub{color:var(--mu);max-width:620px;margin:0 auto}
+.glass{background:var(--card);border:1px solid var(--bd);border-radius:24px;box-shadow:var(--sh);backdrop-filter:blur(14px)}
+.next{margin:28px auto 0;padding:26px;max-width:760px}
+.next h3{margin:0 0 4px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ac)}
+.next .nm{font-size:1.5rem;font-weight:700}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.cd div{background:var(--bg);border:1px solid var(--bd);border-radius:16px;padding:14px 4px}
+.cd b{display:block;font-size:clamp(1.6rem,6vw,2.6rem);font-variant-numeric:tabular-nums}
+.cd small{color:var(--mu);font-size:.75rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:26px 0}
+.stat{padding:18px;text-align:center;transition:.3s}
+.stat:hover{transform:translateY(-5px)}
+.stat b{font-size:2rem;display:block;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mu);font-size:.85rem}
+h2{font-size:1.6rem;margin:44px 0 16px;display:flex;align-items:center;gap:10px}
+.prog{display:flex;align-items:center;gap:16px;padding:18px;margin-bottom:8px}
+.bar{flex:1;height:12px;background:var(--bg);border-radius:9px;overflow:hidden;border:1px solid var(--bd)}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),var(--ac2));transition:width .6s}
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--ac),var(--ac2),var(--ac3))}
+.ex{position:relative;margin-bottom:16px;padding:20px;opacity:0;transform:translateY(24px);transition:.6s,box-shadow .3s}
+.ex.in{opacity:1;transform:none}
+.ex:hover{box-shadow:0 18px 50px -14px var(--ac)}
+.ex::before{content:"";position:absolute;left:-30px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:4px solid var(--ac)}
+.ex.done::before{border-color:var(--ok);background:var(--ok)}
+.ex.today::before{border-color:var(--ac3);animation:pl 1.4s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 9px #f43f5e33}}
+.top{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.dt{min-width:72px;text-align:center;border-radius:16px;padding:8px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff}
+.dt b{font-size:1.9rem;display:block;line-height:1}
+.dt small{font-size:.72rem;opacity:.9}
+.inf{flex:1;min-width:200px}
+.code{font-size:.8rem;color:var(--ac);font-weight:700;letter-spacing:.08em}
+.cn{font-size:1.2rem;font-weight:700}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:.75rem;padding:3px 10px;border-radius:99px;border:1px solid var(--bd);color:var(--mu)}
+.tag.cr{background:#4f46e51f;color:var(--ac);border-color:transparent}
+.st{font-size:.8rem;padding:5px 12px;border-radius:99px;font-weight:600}
+.st.up{background:#06b6d422;color:var(--ac2)}.st.dn{background:#10b98122;color:var(--ok)}.st.td{background:#f43f5e22;color:var(--ac3)}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.ex.open .more{grid-template-rows:1fr}
+.more>div{overflow:hidden}
+.more .in{padding-top:16px;border-top:1px dashed var(--bd);margin-top:16px}
+.gap{color:var(--mu);font-size:.9rem;margin:0 0 10px}
+.ck{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:12px;cursor:pointer;user-select:none}
+.ck:hover{background:var(--bg)}
+.ck input{accent-color:var(--ok);width:18px;height:18px}
+.ck input:checked+span{text-decoration:line-through;opacity:.55}
+.mark{margin-top:10px;background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;border:0;border-radius:12px;padding:9px 16px;font-weight:600}
+.cal{padding:18px}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.cg .h{font-size:.75rem;color:var(--mu);padding:4px 0}
+.cg .d{aspect-ratio:1;display:grid;place-items:center;border-radius:12px;font-size:.95rem;border:1px solid transparent}
+.cg .e{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:700;cursor:pointer;box-shadow:0 6px 16px -6px var(--ac);transition:.2s}
+.cg .e:hover{transform:scale(1.12)}
+.cg .t{border-color:var(--ac3);color:var(--ac3);font-weight:700}
+.cg .sp{background:var(--bg)}
+.lg{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;color:var(--mu);font-size:.82rem}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.info .glass{padding:20px}
+.info h4{margin:0 0 6px;color:var(--ac)}
+.info p{margin:0;color:var(--mu);font-size:.93rem}
+footer{text-align:center;color:var(--mu);font-size:.85rem;margin-top:50px}
+@media(max-width:520px){.cd{gap:6px}.ex{padding:16px}.tl{padding-left:28px}.ex::before{left:-27px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Talent?</div>
-            
-                
-                
-            </div>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Hard Works Always Beats Talent</h1>
-            <p>Be careful about your stimulation</p>
-            
-            <div class="countdown-container">
-                <h3 class="countdown-title">Starts In:</h3>
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">00</div>
-                        <div class="countdown-label">Days</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">Hours</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">Seconds</div>
-                    </div>
-                </div>
-            </div>
-            
-            
-                    
-                    
-    
-    <script>
-     function updateCountdown() {
-    // Set the target date to November 15, 2025 at 00:00:00
-    const targetDate = new Date('November 15, 2025 00:00:00');
-    
-    const now = new Date();
-    const diff = targetDate - now;
-    
-    // Calculate time difference
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    // Update the display
-    document.getElementById('days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-    
-    // If the countdown is finished
-    if (diff < 0) {
-        clearInterval(countdownInterval);
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
-        // You could also display a message here
-        document.querySelector('.countdown-title').textContent = 'The event has started!';
-    }
-}
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<div class="wrap">
+<nav>
+ <div class="logo"><i>⌂</i><span>FEC · CE 13</span></div>
+ <div class="ctl"><button class="btn" id="lang">বাংলা</button><button class="btn" id="theme">◐</button></div>
+</nav>
 
-// Update countdown every second
-const countdownInterval = setInterval(updateCountdown, 1000);
-updateCountdown(); // Initial call
-    </script>
+<header class="hero">
+ <span class="chip" data-k="chip"></span>
+ <h1><span>CE 13</span><br><em style="font-style:normal" data-k="title"></em></h1>
+ <p class="sub" data-k="sub"></p>
+ <div class="glass next" id="next"></div>
+</header>
+
+<section class="stats" id="stats"></section>
+
+<h2 data-k="h_tl"></h2>
+<div class="tl" id="tl"></div>
+
+<h2 data-k="h_cal"></h2>
+<div class="glass cal"><div class="cg" id="cg"></div>
+ <div class="lg"><span>🟦 <span data-k="l_ex"></span></span><span>🔴 <span data-k="l_td"></span></span><span>⬜ <span data-k="l_st"></span></span></div></div>
+
+<h2 data-k="h_info"></h2>
+<div class="info" id="info"></div>
+
+<footer><span data-k="foot"></span></footer>
+</div>
+
+<script>
+const EX=[
+ {d:6,wd:0,code:"CE-102",name:"Engineering Mechanics",cr:4},
+ {d:10,wd:4,code:"Phy-101",name:"Physical Optics, Heat, Waves and Oscillation",cr:3},
+ {d:15,wd:2,code:"Math-101",name:"Differential and Integral Calculus",cr:3},
+ {d:20,wd:0,code:"Chem-101",name:"Chemistry-I",cr:3},
+ {d:23,wd:3,code:"HUM-101",name:"English",cr:2}
+];
+const WD={en:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],bn:["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"]};
+const T={
+en:{chip:"Dhaka University · Engineering Colleges · Exam 2026",title:"1st Year 1st Semester",sub:"BSc in Civil Engineering (Regular & Follow-on) exam routine. Exams start at 10:00 AM sharp at your own college centre.",
+ h_prog:"📈 Your preparation",h_tl:"🗓️ Exam timeline",h_cal:"📅 December 2026",h_info:"ℹ️ Notice details",l_ex:"Exam day",l_td:"Today",l_st:"Study day",
+ nextT:"Next exam",nextDone:"All exams completed — well done! 🎉",nextToday:"Exam is today!",d:"Days",h:"Hours",m:"Min",s:"Sec",
+ st:["Exams","Total credits","Days span","Start time"],
+ up:"Upcoming",dn:"Completed",td:"Today",cr:"Credits",gapT:"study days since previous exam",gap0:"First exam of the semester — start strong!",
+ tasks:["Finish syllabus revision","Solve previous questions","Make formula / short notes","Take a mock test"],mark:"Mark exam done",unmark:"Undo",
+ i:[["Venue","Own college centre. Cyke Institute of Management & Technology centre: Arts Building, University of Dhaka."],["Time","Starts 10:00 AM, or as stated on the question paper."],["Issued","Memo no. 4589/Me. Se./Pa./335 · 15/11/2026 by the Controller of Examinations (Acting), University of Dhaka."]],
+ foot:"Made for FEC CE 13 · Always confirm with the official notice from University of Dhaka.",
+ sd:"Starts 10:00 AM"},
+bn:{chip:"ঢাকা বিশ্ববিদ্যালয় · ইঞ্জিনিয়ারিং কলেজ · পরীক্ষা ২০২৬",title:"১ম বর্ষ ১ম সেমিস্টার",sub:"বি.এসসি ইন সিভিল ইঞ্জিনিয়ারিং (নিয়মিত ও ফলোনয়ন) পরীক্ষার সময়সূচি। পরীক্ষা সকাল ১০:০০ টায় নিজ নিজ কলেজ কেন্দ্রে।",
+ h_prog:"📈 তোমার প্রস্তুতি",h_tl:"🗓️ পরীক্ষার টাইমলাইন",h_cal:"📅 ডিসেম্বর ২০২৬",h_info:"ℹ️ বিজ্ঞপ্তির তথ্য",l_ex:"পরীক্ষার দিন",l_td:"আজ",l_st:"পড়ার দিন",
+ nextT:"পরবর্তী পরীক্ষা",nextDone:"সব পরীক্ষা শেষ — অভিনন্দন! 🎉",nextToday:"আজ পরীক্ষা!",d:"দিন",h:"ঘণ্টা",m:"মিনিট",s:"সেকেন্ড",
+ st:["পরীক্ষা","মোট ক্রেডিট","দিনের ব্যাপ্তি","শুরুর সময়"],
+ up:"আসন্ন",dn:"সম্পন্ন",td:"আজ",cr:"ক্রেডিট",gapT:"দিন পড়ার সময় আগের পরীক্ষা থেকে",gap0:"সেমিস্টারের প্রথম পরীক্ষা — দুর্দান্ত শুরু করো!",
+ tasks:["সিলেবাস রিভিশন শেষ করো","আগের প্রশ্ন সমাধান করো","ফর্মুলা / শর্ট নোট বানাও","মডেল টেস্ট দাও"],mark:"পরীক্ষা শেষ চিহ্নিত করো",unmark:"বাতিল",
+ i:[["কেন্দ্র","নিজ নিজ কলেজ কেন্দ্র। সাইক ইনস্টিটিউট অব ম্যানেজমেন্ট এন্ড টেকনোলজির কেন্দ্র: ঢাকা বিশ্ববিদ্যালয়ের কলা ভবন।"],["সময়","সকাল ১০:০০ টা থেকে, অথবা প্রশ্নপত্রে উল্লেখিত সময়।"],["প্রকাশ","মেমো নং ৪৫৮৯/মে. সে./প./৩৩৫ · ১৫/১১/২০২৬ · পরীক্ষা নিয়ন্ত্রক (ভারপ্রাপ্ত), ঢাকা বিশ্ববিদ্যালয়।"]],
+ foot:"FEC CE 13 এর জন্য তৈরি · সবসময় ঢাকা বিশ্ববিদ্যালয়ের অফিসিয়াল বিজ্ঞপ্তি যাচাই করো।",
+ sd:"সকাল ১০:০০ টা"}
+};
+let L="en",done={},chk={};
+try{const s=JSON.parse(localStorage.getItem("ce13")||"{}");done=s.done||{};chk=s.chk||{};L=s.L||"en"}catch(e){}
+const save=()=>{try{localStorage.setItem("ce13",JSON.stringify({done,chk,L}))}catch(e){}};
+const n=v=>L==="bn"?String(v).replace(/\d/g,c=>"০১২৩৪৫৬৭৮৯"[c]):String(v);
+const t=k=>T[L][k];
+const at=e=>Date.UTC(2026,11,e.d,4,0); // 10:00 Dhaka (UTC+6)
+const bdNow=()=>new Date(Date.now()+6*36e5);
+const todayD=()=>{const x=bdNow();return{y:x.getUTCFullYear(),m:x.getUTCMonth(),d:x.getUTCDate()}};
+function status(e){const x=todayD(),k=x.y*10000+x.m*100+x.d,ek=2026*10000+1100+e.d;return k===ek?"td":(k>ek?"dn":"up")}
+function render(){
+ document.documentElement.lang=L==="bn"?"bn":"en";document.body.classList.toggle("bn",L==="bn");
+ document.getElementById("lang").textContent=L==="bn"?"English":"বাংলা";
+ document.querySelectorAll("[data-k]").forEach(el=>el.textContent=t(el.dataset.k));
+ const cr=EX.reduce((a,e)=>a+e.cr,0);
+ document.getElementById("stats").innerHTML=[[EX.length,0],[cr,1],[18,2],[L==="bn"?"১০:০০":"10:00",3]].map(([v,i])=>`<div class="glass stat"><b>${n(v)}${i===2?"":""}</b><span>${t("st")[i]}</span></div>`).join("");
+ document.getElementById("tl").innerHTML=EX.map((e,i)=>{
+  const s=done[i]?"dn":status(e);const gap=i?e.d-EX[i-1].d-1:0;
+  const sl={up:t("up"),dn:t("dn"),td:t("td")}[s];
+  return `<article class="glass ex ${s==="dn"?"done":""} ${s==="td"?"today":""}" data-i="${i}" id="ex${e.d}">
+  <div class="top"><div class="dt"><b>${n(e.d)}</b><small>${L==="bn"?"ডিসেম্বর":"DEC"}</small></div>
+  <div class="inf"><div class="code">${e.code}</div><div class="cn">${e.name}</div>
+  <div class="meta"><span class="tag">${WD[L][e.wd]}</span><span class="tag">⏰ ${t("sd")}</span><span class="tag cr">${n(e.cr)} ${t("cr")}</span></div></div>
+  <span class="st ${s==="dn"?"dn":s==="td"?"td":"up"}">${sl}</span></div>
+  </article>`}).join("");
+ document.querySelectorAll(".ex").forEach((el,i)=>setTimeout(()=>el.classList.add("in"),80*i));
+ // calendar
+ let h=WD[L].map(w=>`<div class="h">${w.slice(0,L==="bn"?3:3)}</div>`).join("")+"<div></div><div></div>";
+ const x=todayD();
+ for(let d=1;d<=31;d++){const e=EX.find(q=>q.d===d);const isT=x.y===2026&&x.m===11&&x.d===d;
+  h+=`<div class="d ${e?"e":""} ${isT?"t":""} ${!e&&d>=6&&d<=23?"sp":""}" ${e?`data-go="${d}" title="${e.code}"`:""}>${n(d)}</div>`}
+ document.getElementById("cg").innerHTML=h;
+ document.getElementById("info").innerHTML=t("i").map(([a,b])=>`<div class="glass"><h4>${a}</h4><p>${b}</p></div>`).join("");
+ tick();
+}
+function prog(){const p=Math.round(100*(Object.values(chk).filter(Boolean).length+Object.values(done).filter(Boolean).length*4)/(EX.length*4+EX.length*4));
+ const v=Math.min(100,p);document.getElementById("pct").textContent=n(v)+"%";document.getElementById("barf").style.width=v+"%"}
+function tick(){
+ const el=document.getElementById("next"),now=Date.now();
+ const nx=EX.find((e,i)=>!done[i]&&at(e)+4*36e5>now);
+ if(!nx){el.innerHTML=`<div class="nm">${t("nextDone")}</div>`;return}
+ const st=status(nx);let diff=Math.max(0,at(nx)-now);
+ const D=Math.floor(diff/864e5),H=Math.floor(diff%864e5/36e5),M=Math.floor(diff%36e5/6e4),S=Math.floor(diff%6e4/1e3);
+ el.innerHTML=`<h3>${st==="td"?t("nextToday"):t("nextT")}</h3><div class="nm">${nx.code} · ${nx.name}</div>
+ <div style="color:var(--mu);font-size:.9rem">${WD[L][nx.wd]}, ${n(nx.d)} ${L==="bn"?"ডিসেম্বর":"December"} 2026 · ${t("sd")}</div>
+ <div class="cd">${[[D,"d"],[H,"h"],[M,"m"],[S,"s"]].map(([v,k])=>`<div><b>${n(String(v).padStart(2,"0"))}</b><small>${t(k)}</small></div>`).join("")}</div>`;
+}
+document.addEventListener("click",ev=>{
+ const a=ev.target.closest(".top");if(a){a.parentElement.classList.toggle("open")}
+ const m=ev.target.closest("[data-m]");if(m){const i=m.dataset.m;done[i]=!done[i];save();const o=[...document.querySelectorAll(".ex.open")].map(e=>e.dataset.i);render();o.forEach(i=>document.querySelector(`.ex[data-i="${i}"]`).classList.add("open"))}
+ const g=ev.target.closest("[data-go]");if(g){const e=document.getElementById("ex"+g.dataset.go);e.scrollIntoView({block:"center"});e.classList.add("open")}
+});
+document.addEventListener("change",ev=>{const c=ev.target.dataset.c;if(c){chk[c]=ev.target.checked;save();prog()}});
+document.getElementById("lang").onclick=()=>{L=L==="en"?"bn":"en";save();render()};
+document.getElementById("theme").onclick=()=>{const r=document.documentElement;const d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+render();setInterval(tick,1000);
+</script>
 </body>
 </html>
