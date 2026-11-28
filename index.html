@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport-from-tanim" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <title>CE'13 Attendance Portal · Faridpur Engineering College</title>
 <style>
@@ -59,13 +59,65 @@ button{padding:14px 22px;border:0;border-radius:12px;background:var(--ac);color:
 .facts div{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:12px;text-align:center}
 .facts b{display:block;font-size:20px;color:var(--ac)}
 .facts span{display:block;font-size:11.5px;color:var(--mu);line-height:1.3}
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.member{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--bd);border-radius:14px;background:var(--bg)}
-.avatar{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;background:var(--ac);color:#fff;font-weight:800;font-size:15px;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover;display:block}
-.member b{display:block;font-size:15px}
-.member span{display:block;font-size:12px;color:var(--mu);margin:1px 0 4px}
+
+/* About: bigger profile pictures */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.member{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:26px 16px 20px;border:1px solid var(--bd);border-radius:18px;background:var(--bg);transition:transform .25s,box-shadow .25s}
+.member:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px var(--ac)}
+.avatar{position:relative;width:140px;height:140px;flex:none;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--ac),#7c5cff);color:#fff;font-weight:800;font-size:38px;overflow:hidden;border:4px solid var(--card);box-shadow:0 0 0 3px var(--ac),0 14px 28px -10px var(--ac);margin-bottom:12px}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.member b{display:block;font-size:17px}
+.member span{display:block;font-size:12.5px;color:var(--mu);margin:1px 0 6px}
 .member a{font-size:13px;color:var(--ac);font-weight:600;text-decoration:none;word-break:break-word}
+
+/* Routine tab */
+.next{text-align:center;margin-top:20px}
+.next .lbl{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);font-weight:700}
+.next .nm{font-size:clamp(18px,4.5vw,22px);font-weight:800;line-height:1.3;margin:2px 0}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:440px;margin:16px auto 0}
+.cd div{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:12px 4px}
+.cd b{display:block;font-size:clamp(24px,7vw,34px);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cd small{font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:.07em}
+.cd div:last-child b{color:var(--ac)}
+.tl{position:relative;padding-left:28px}
+.tl::before{content:"";position:absolute;left:8px;top:8px;bottom:8px;border-left:2px dashed var(--bd)}
+.ex{position:relative;display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px;border:1px solid var(--bd);border-radius:16px;background:var(--bg);transition:transform .25s,box-shadow .25s}
+.ex:hover{transform:translateX(4px)}
+.ex::before{content:"";position:absolute;left:-26px;top:50%;margin-top:-8px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--mu)}
+.ex.dn::before{background:var(--ok);border-color:var(--ok)}
+.ex.nx{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 20%,transparent),0 12px 28px -14px var(--ac)}
+.ex.nx::before{border-color:var(--ac);animation:pl 1.6s infinite}
+.ex.td{border-color:var(--er)}
+.ex.td::before{border-color:var(--er);animation:pl 1.2s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--ac) 25%,transparent)}}
+.dt{width:64px;flex:none;text-align:center;border-radius:14px;padding:8px 4px;background:var(--ac);color:#fff}
+.dt b{display:block;font-size:26px;line-height:1;font-weight:800}
+.dt small{font-size:11px;letter-spacing:.08em;opacity:.9}
+.ex.dn .dt{background:var(--ok)}
+.ex.up:not(.nx) .dt{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
+.inf{flex:1;min-width:180px}
+.code{font-size:12px;font-weight:800;color:var(--ac);letter-spacing:.08em}
+.cn{font-size:16px;font-weight:700;line-height:1.3}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:11.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--bd);color:var(--mu);background:var(--card)}
+.sb{font-size:12px;font-weight:700;padding:4px 11px;border-radius:99px;color:#fff;background:var(--mu)}
+.sb.dn{background:var(--ok)}.sb.nx{background:var(--ac)}.sb.td{background:var(--er)}
+.gp{margin:6px 0 6px 6px;font-size:12px;color:var(--mu);display:flex;align-items:center;gap:8px}
+.gp::before{content:"";width:18px;border-top:2px dashed var(--bd)}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;max-width:420px;margin:0 auto}
+.cg .h{font-size:11px;color:var(--mu);font-weight:700;letter-spacing:.06em}
+.cg .d{aspect-ratio:1;display:grid;place-items:center;border-radius:11px;font-size:14px;border:1px solid transparent;font-variant-numeric:tabular-nums}
+.cg .e{background:var(--ac);color:#fff;font-weight:800;cursor:pointer;transition:transform .2s}
+.cg .e:hover{transform:scale(1.1)}
+.cg .t{border-color:var(--er);color:var(--er);font-weight:800}
+.act{display:flex;justify-content:center;margin-top:16px}
+.ghost{background:var(--bg);color:var(--ac);border:1px solid var(--ac);padding:11px 18px;font-size:14px}
+.nt{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.nt div{border:1px solid var(--bd);border-radius:12px;padding:12px;background:var(--bg)}
+.nt b{display:block;font-size:13px;color:var(--ac);margin-bottom:2px}
+.nt span{font-size:13px;color:var(--mu)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
 footer{text-align:center;color:var(--mu);font-size:13px;padding:28px 16px}
 footer a,.card a{color:var(--ac);font-weight:600}
 .hide{display:none}
@@ -84,7 +136,7 @@ footer a,.card a{color:var(--ac);font-weight:600}
       <span>Faridpur Engineering College · Dept. of Civil Engineering</span>
     </div>
   </div>
-  <nav><a href="#home" id="n-home">Home</a><a href="#about" id="n-about">About</a></nav>
+  <nav><a href="#home" id="n-home">Home</a><a href="#routine" id="n-routine">Routine</a><a href="#about" id="n-about">About</a></nav>
 </header>
 
 <main>
@@ -97,6 +149,41 @@ footer a,.card a{color:var(--ac);font-weight:600}
     <form id="f"><input id="r" inputmode="numeric" placeholder="Enter your roll no." autocomplete="off" aria-label="Roll number"><button>Search</button></form>
   </div>
   <div id="out"></div>
+</section>
+
+<section id="routine" class="hide">
+  <div class="blueprint">
+    <div class="hero">
+      <h1>Exam routine</h1>
+      <p>1st Year 1st Semester (Regular &amp; Follow-on) · B.Sc. in Civil Engineering · 2026</p>
+    </div>
+    <div class="next" id="next"></div>
+    <div class="facts">
+      <div><b>5</b><span>exams</span></div>
+      <div><b>15</b><span>total credits</span></div>
+      <div><b>10:00 AM</b><span>start time</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="h-sec">Exam timeline</div>
+    <div class="tl" id="tl"></div>
+  </div>
+
+  <div class="card">
+    <div class="h-sec">December 2026</div>
+    <div class="cg" id="cg"></div>
+    <div class="act"><button class="ghost" id="ics" type="button">＋ Add exams to my calendar</button></div>
+  </div>
+
+  <div class="card">
+    <div class="h-sec">Notice</div>
+    <div class="nt">
+      <div><b>Venue</b><span>Own college centre. Cyke Institute of Management &amp; Technology centre: Arts Building, University of Dhaka.</span></div>
+      <div><b>Time</b><span>Starts 10:00 AM, or as stated on the question paper.</span></div>
+      <div><b>Issued</b><span>Memo no. 4589/Me. Se./Pa./335 · 15/11/2026 · Controller of Examinations (Acting), University of Dhaka.</span></div>
+    </div>
+  </div>
 </section>
 
 <section id="about" class="hide">
@@ -115,25 +202,18 @@ footer a,.card a{color:var(--ac);font-weight:600}
   <div class="card">
     <div class="h-sec">Built by</div>
     <div class="team">
-      
-      
       <article class="member">
-        <div class="avatar" aria-hidden="true"><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/730244969_997635236489905_6840381565462091389_n.jpg?stp=dst-jpg_tt6&cstp=mx896x896&ctp=s896x896&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=R2jfE3Awo3IQ7kNvwEMqULZ&_nc_oc=Adp6Bg3H5wer5uE1rP4qZsVQ52BnMiFF3t5zQN5zfYgDxMK3BVoiEPZljT1B4RiQb1g&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=B9sE_2KBhWuYXRTG2Qo19A&_nc_ss=7b3a8&oh=00_AQSJyU2H2pe10MFdqiDG8nMFeUc3EMo1KuH_OT7173dVtA&oe=6B0B0696" alt="Tanim"></div>
-        <div>
-          <b>Tanim Hossain</b>
-          <span>Lead developer · data digitisation</span>
-          <a href="https://github.com/from-tanim" target="_blank" rel="noopener">github.com/from-tanim</a>
-        </div>
+        <div class="avatar"><span aria-hidden="true">TH</span><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/730244969_997635236489905_6840381565462091389_n.jpg?stp=dst-jpg_tt6&cstp=mx896x896&ctp=s896x896&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=R2jfE3Awo3IQ7kNvwEMqULZ&_nc_oc=Adp6Bg3H5wer5uE1rP4qZsVQ52BnMiFF3t5zQN5zfYgDxMK3BVoiEPZljT1B4RiQb1g&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=B9sE_2KBhWuYXRTG2Qo19A&_nc_ss=7b3a8&oh=00_AQSJyU2H2pe10MFdqiDG8nMFeUc3EMo1KuH_OT7173dVtA&oe=6B0B0696" alt="Tanim Hossain" onerror="this.remove()"></div>
+        <b>Tanim Hossain</b>
+        <span>Lead developer · data digitisation</span>
+        <a href="https://github.com/from-tanim" target="_blank" rel="noopener">github.com/from-tanim</a>
       </article>
 
-      
       <article class="member">
-        <div class="avatar" aria-hidden="true"><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/910466262_1889018322542582_3584538696698538863_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1200&ctp=s1200x1200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=s41sdQStwM8Q7kNvwHPbo_x&_nc_oc=AdpX5NBd7mQYAAS_wyrIvzzhHsv2j4ybyXAF9at6gDvPy3VWgdoyLgK-SUzaDkryMzY&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=uaywWkOD0FNuianO-nozBQ&_nc_ss=7b3a8&oh=00_AQT095yo2YcYP7oqQb5fm3c_YxGswY9DJWNJF0zMFr9wyQ&oe=6B0AFBF4" alt="Tanim">NS</div>
-        <div>
-          <b>Md. Awasaf Mushfiq</b>
-          <span>Co-developer · data verification</span>
-          <a href="#" target="_blank" rel="noopener">@mushfiqq</a>
-        </div>
+        <div class="avatar"><span aria-hidden="true">MM</span><img src="https://scontent.fdac179-1.fna.fbcdn.net/v/t39.30808-6/910466262_1889018322542582_3584538696698538863_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1200&ctp=s1200x1200&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=s41sdQStwM8Q7kNvwHPbo_x&_nc_oc=AdpX5NBd7mQYAAS_wyrIvzzhHsv2j4ybyXAF9at6gDvPy3VWgdoyLgK-SUzaDkryMzY&_nc_zt=23&_nc_ht=scontent.fdac179-1.fna&_nc_gid=uaywWkOD0FNuianO-nozBQ&_nc_ss=7b3a8&oh=00_AQT095yo2YcYP7oqQb5fm3c_YxGswY9DJWNJF0zMFr9wyQ&oe=6B0AFBF4" alt="Md. Awasaf Mushfiq" onerror="this.remove()"></div>
+        <b>Md. Awasaf Mushfiq</b>
+        <span>Co-developer · data verification</span>
+        <a href="#" target="_blank" rel="noopener">@mushfiqq</a>
       </article>
     </div>
   </div>
@@ -155,11 +235,10 @@ const col=p=>p>=75?"var(--ok)":p>=60?"var(--wa)":"var(--er)";
 const mk=(a,t)=>Math.max(0,Math.min(10,Math.round(a/t*10)));
 
 function show(){
-  const h=location.hash==="#about"?"about":"home";
-  $("home").classList.toggle("hide",h!=="home");$("about").classList.toggle("hide",h!=="about");
-  $("n-home").classList.toggle("on",h==="home");$("n-about").classList.toggle("on",h==="about");
+  const h=["about","routine"].includes(location.hash.slice(1))?location.hash.slice(1):"home";
+  ["home","routine","about"].forEach(k=>{$(k).classList.toggle("hide",h!==k);$("n-"+k).classList.toggle("on",h===k)});
 }
-addEventListener("hashchange",show);show();
+addEventListener("hashchange",()=>{show();scrollTo(0,0)});show();
 
 $("f").addEventListener("submit",e=>{
   e.preventDefault();
@@ -202,5 +281,56 @@ $("f").addEventListener("submit",e=>{
     +'<p class="note" style="text-align:center;margin-top:14px">Attendance marks per course = attended ÷ conducted × 10 (rounded, max 10). '
     +'Green ≥ 75%, amber 60–74%, red &lt; 60%.</p>';
 });
+
+/* ---------- Routine tab ---------- */
+// [day of Dec 2026, weekday 0=Sun, code, course, credits]
+const EX=[[6,0,"CE 102","Engineering Mechanics",4],[10,4,"PHY 101","Physical Optics, Heat, Waves and Oscillation",3],[15,2,"MATH 101","Differential and Integral Calculus",3],[20,0,"CHEM 101","Chemistry-I",3],[23,3,"HUM 101","English",2]];
+const DN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const at=e=>Date.UTC(2026,11,e[0],4,0); // 10:00 AM Dhaka (UTC+6)
+const todayK=()=>{const x=new Date(Date.now()+6*36e5);return x.getUTCFullYear()*10000+x.getUTCMonth()*100+x.getUTCDate()};
+const sOf=e=>{const k=todayK(),q=2026*10000+1100+e[0];return k===q?"td":k>q?"dn":"up"};
+const nextIdx=()=>EX.findIndex(e=>at(e)+4*36e5>Date.now());
+let shownNx=-2;
+
+function drawTL(){
+  const nx=shownNx=nextIdx();let h="";
+  EX.forEach((e,i)=>{
+    const s=sOf(e),isNx=i===nx&&s!=="td";
+    if(i)h+='<div class="gp">'+(e[0]-EX[i-1][0]-1)+' study days in between</div>';
+    const lab=s==="td"?"Today":s==="dn"?"Done":isNx?"Next":"Upcoming";
+    h+='<article class="ex '+s+(isNx?" nx":"")+'" id="ex'+e[0]+'">'
+      +'<div class="dt"><b>'+e[0]+'</b><small>DEC</small></div>'
+      +'<div class="inf"><div class="code">'+e[2]+'</div><div class="cn">'+e[3]+'</div>'
+      +'<div class="meta"><span class="tag">'+DN[e[1]]+'</span><span class="tag">⏰ 10:00 AM</span><span class="tag">'+e[4]+' credits</span></div></div>'
+      +'<span class="sb '+(s==="td"?"td":s==="dn"?"dn":isNx?"nx":"")+'">'+lab+'</span></article>';
+  });
+  $("tl").innerHTML=h;
+}
+function drawCal(){
+  let h="SMTWTFS".split("").map(c=>'<div class="h">'+c+'</div>').join("")+"<div></div><div></div>";
+  const k=todayK();
+  for(let d=1;d<=31;d++){const e=EX.find(q=>q[0]===d);
+    h+='<div class="d'+(e?" e":"")+(k===2026*10000+1100+d?" t":"")+'"'+(e?' data-go="'+d+'" title="'+e[2]+'"':"")+'>'+d+'</div>'}
+  $("cg").innerHTML=h;
+}
+function tick(){
+  const now=Date.now(),i=nextIdx();
+  if(i!==shownNx)drawTL();
+  if(i<0){$("next").innerHTML='<div class="nm">All exams completed. Well done! 🎉</div>';return}
+  const e=EX[i],df=Math.max(0,at(e)-now);
+  const v=[Math.floor(df/864e5),Math.floor(df%864e5/36e5),Math.floor(df%36e5/6e4),Math.floor(df%6e4/1e3)];
+  $("next").innerHTML='<div class="lbl">'+(sOf(e)==="td"?"Exam is today":"Next exam")+'</div>'
+    +'<div class="nm">'+e[2]+' · '+e[3]+'</div>'
+    +'<div class="note">'+DN[e[1]]+', '+e[0]+' December 2026 · 10:00 AM</div>'
+    +'<div class="cd">'+["Days","Hours","Min","Sec"].map((l,j)=>'<div><b>'+String(v[j]).padStart(2,"0")+'</b><small>'+l+'</small></div>').join("")+'</div>';
+}
+document.addEventListener("click",ev=>{const g=ev.target.closest("[data-go]");if(g)$("ex"+g.dataset.go).scrollIntoView({block:"center",behavior:"smooth"})});
+$("ics").onclick=()=>{
+  const z=n=>String(n).padStart(2,"0"),f=ms=>{const d=new Date(ms);return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate())+"T"+z(d.getUTCHours())+z(d.getUTCMinutes())+"00Z"};
+  const ev=EX.map(e=>["BEGIN:VEVENT","UID:ce13-"+e[2].replace(" ","")+"@fec-ce-13","DTSTAMP:"+f(Date.now()),"DTSTART:"+f(at(e)),"DTEND:"+f(at(e)+3*36e5),"SUMMARY:"+e[2]+" · "+e[3]+" (CE'13 Exam)","END:VEVENT"].join("\r\n")).join("\r\n");
+  const b=new Blob(["BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//CE13//Routine//EN\r\n"+ev+"\r\nEND:VCALENDAR"],{type:"text/calendar"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="ce13-exam-routine.ics";document.body.appendChild(a);a.click();a.remove();
+};
+drawTL();drawCal();tick();setInterval(tick,1000);
 </script>
 </body></html>
