@@ -34,6 +34,7 @@ button{padding:14px 22px;border:0;border-radius:12px;background:var(--ac);color:
 .ring i{width:84px;height:84px;border-radius:50%;background:var(--card);display:grid;place-items:center;font:700 24px system-ui;font-style:normal}
 .badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:13px;font-weight:700;color:#fff}
 .rollno{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.stname{font-size:18px;font-weight:700;line-height:1.3;margin:2px 0 8px;word-break:break-word}
 .sumrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
 .big{font-size:24px;font-weight:800;letter-spacing:-.02em}
 .big small{font-size:14px;color:var(--mu);font-weight:700}
@@ -145,8 +146,11 @@ footer a,.card a{color:var(--ac);font-weight:600}
 const C=[["PHY 101","Physics",3,30],["CHEM 101","Chemistry",3,32],["CHEM 102","Chemistry Lab",1.5,12],["MATH 101","Mathematics",3,33],["Hum 101","Humanities",2,19],["Hum 102","Humanities",.75,9],["CE 101","Civil Engineering",1.5,14],["CE 102","Civil Engineering",4,45]];
 // roll, 8 attended counts, average %, remark (0 none, 1 non-collegiate fee, 2 not eligible)
 const D=[[1,22,30,11,28,15,7,11,40,83,0],[2,27,29,12,30,18,9,14,44,96,0],[3,24,30,10,29,17,7,11,33,83,0],[4,26,32,12,29,18,8,14,43,94,0],[5,25,24,11,30,16,7,13,42,86,0],[6,26,25,11,27,17,6,13,42,85,0],[7,28,22,12,33,17,8,13,44,94,0],[8,20,30,8,30,17,7,12,37,82,0],[10,23,31,12,30,19,8,14,41,93,0],[11,21,31,12,33,17,7,13,38,89,0],[12,23,32,10,30,15,8,10,41,85,0],[13,18,28,10,26,15,6,11,31,75,0],[14,23,29,11,32,17,9,13,38,90,0],[15,24,30,10,31,18,9,13,43,92,0],[16,25,30,11,32,18,7,14,37,90,0],[17,27,32,12,30,19,9,14,43,97,0],[18,23,31,10,32,16,8,14,40,90,0],[19,26,31,12,33,19,9,14,39,96,0],[20,27,31,12,32,19,9,14,42,97,0],[21,27,32,11,33,19,9,13,43,96,0],[22,19,30,8,20,10,5,7,38,66,1],[25,19,28,12,25,14,7,14,35,82,0],[28,26,31,9,30,16,9,12,42,89,0],[30,27,30,10,32,17,9,14,44,94,0],[31,14,28,10,25,16,8,14,30,79,0],[32,14,20,8,20,13,6,9,20,60,1],[35,17,24,10,20,14,7,13,20,71,1],[36,18,25,9,25,14,4,13,41,74,1],[37,17,26,10,26,15,5,14,37,77,0],[38,18,23,9,26,10,5,12,38,71,1],[39,25,31,11,30,16,9,10,43,89,0],[43,18,25,9,25,10,5,9,37,68,1],[46,18,26,10,25,10,6,4,25,63,1],[48,25,29,11,30,16,9,8,43,87,0],[49,23,32,12,30,18,8,14,40,93,0],[50,23,29,10,31,13,8,14,38,86,0],[51,29,32,12,33,19,9,14,43,99,0],[55,19,24,9,28,15,6,11,32,74,0],[56,30,32,12,30,19,9,14,45,99,0],[491,12,27,10,23,10,7,8,35,68,1],[497,22,26,10,28,16,7,12,39,82,0],[499,18,24,9,26,9,4,12,33,67,1],[519,24,27,10,33,17,7,13,44,88,0],[523,27,32,12,28,15,8,14,38,91,0],[524,18,32,12,29,13,9,13,43,88,0],[526,5,22,8,10,3,0,2,35,36,2],[534,20,29,11,28,14,8,9,25,70,0],[536,19,29,11,15,13,6,9,30,77,1],[540,29,32,12,31,18,9,14,20,91,0],[542,20,30,11,30,12,8,13,10,76,0]];
+// student names by roll (from the webmail sheet). Rolls 22 and 526 are not in that sheet.
+const N={1:"Tamim Rahmam",2:"Afroja",3:"Protik Mondol",4:"Md. Emtiaz Ahmed Alif",5:"Tanim Hossain",6:"Md. Awasaf Mushfiq",7:"Zinat Huda Nur",8:"Md. Razim Khan",10:"Taohid Ibney Gaffari Sadri",11:"Ivy Akter Mim",12:"Tahmina Islam Tonu",13:"Md. Aklasul Islam",14:"Sefat Sheikh",15:"Taniya Akter Joly",16:"Shariyar Ahamed",17:"Rodra Sarker Moon",18:"Md. Mominul Huda",19:"Md. Hasin Mahtab",20:"Nafis Shahariyar Sunzid",21:"Md. Yousuf Sarker",25:"Jeet Shaha",28:"Md. Abdullah",30:"Md. Sohanur Rahman Sohan",31:"Sanjida Rowshon Tuli",32:"Tasnim Islam Meem",35:"Subro Das",36:"Farhatul Islam",37:"Md. Sany Rahman",38:"Md. Arafat Islam Ahid",39:"Mst. Rafayat Akter Shimu",43:"Promita Das Uma",46:"A. A. M. Hurayra",48:"Akib Hossain",49:"Md. Mominul Haque Khokon",50:"Md. Rokibul Hasan",51:"Mahfujul Haque Forhad",55:"Agnil Joarder",56:"Anonyo Chakma",491:"Md. Taohidul Islam",497:"Md. Afnan Sheikh",499:"Aojoy Dip Ovi",519:"Md. Abrar Sarker Dhiman",523:"Shudip Kumer Roy",524:"Md. Ratul Islam",534:"S M Julker Nain",536:"Md. Samiul Hasan",540:"Sumon Ahmed",542:"Maliha Afroz"};
 
 const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const col=p=>p>=75?"var(--ok)":p>=60?"var(--wa)":"var(--er)";
 const mk=(a,t)=>Math.max(0,Math.min(10,Math.round(a/t*10)));
 
@@ -162,7 +166,7 @@ $("f").addEventListener("submit",e=>{
   const v=parseInt($("r").value.trim(),10),o=$("out"),d=D.find(x=>x[0]===v);
   if(!d){o.innerHTML='<div class="card err">No record found for roll '+(isNaN(v)?"—":v)+'. Please check the number and try again.</div>';return}
 
-  const avg=d[9],rm=d[10];
+  const avg=d[9],rm=d[10],nm=N[d[0]]||"";
   const st=rm===2?["Not Eligible","var(--er)"]:rm===1?["Non-Collegiate Fee","var(--wa)"]:["Eligible","var(--ok)"];
 
   let rows="",tot=0;
@@ -183,6 +187,7 @@ $("f").addEventListener("submit",e=>{
     '<div class="card"><div class="top">'
       +'<div class="ring" style="--p:'+avg+';--c:'+col(avg)+'"><i>'+avg+'%</i></div>'
       +'<div><div class="note">Roll No.</div><div class="rollno">'+d[0]+'</div>'
+      +(nm?'<div class="stname">'+esc(nm)+'</div>':'')
       +'<span class="badge" style="background:'+st[1]+'">'+st[0]+'</span></div>'
     +'</div></div>'
 
